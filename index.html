@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Image Upload</title>
+</head>
+
+<!-- css -->
+<link rel="stylesheet" href="css/ng-img-crop.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- javascript -->
+<script src="js/angular/angular.min.js"></script>
+<script src="js/ng-img-crop.js" charset="utf-8"></script>
+<script src="js/app.js"></script>
+
+
+<body ng-app="ImageUpload" ng-cloak>
+  <div ng-controller="homeController">
+    <div> <h2>Select an image file:</h2> <input type="file" id="fileInput" /></div>
+    <div class="cropArea">
+      <img-crop image="Image" area-type="square" result-image="CroppedImage"></img-crop>
+    </div>
+    <br>
+    <div><h2>Cropped Image:</h2></div>
+    <div>
+
+      <a ng-click="download()" href="/images/crop.jpg" download><img ng-src="{{CroppedImage}}" /></a>
+    </div>
+  </div>
+
+</body>
+</html>
